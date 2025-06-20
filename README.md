@@ -20,5 +20,6 @@ The code is scaffolded with Vite and is intended to be modular and extensible.
 ### Mock Content Generation
 
 The `generateContent()` utility returns random placeholder text after a short delay.
-It powers the "+ Add Block" button in the workspace.
+It powers the "+ Add Block" button in the workspace, which uses the reusable
+`Button` component from `@/components/ui/button`.
 

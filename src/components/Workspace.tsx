@@ -1,5 +1,6 @@
 import { FC, useState } from 'react'
 import generateContent from '../utils/generateContent'
+import { Button } from '@/components/ui/button'
 
 const Workspace: FC = () => {
   const [blocks, setBlocks] = useState<string[]>(['Editable Block'])
@@ -23,12 +24,7 @@ const Workspace: FC = () => {
           }}
         />
       ))}
-      <button
-        className="px-3 py-1 text-sm border rounded-md"
-        onClick={addBlock}
-      >
-        + Add Block
-      </button>
+      <Button onClick={addBlock}>+ Add Block</Button>
     </div>
   )
 }
