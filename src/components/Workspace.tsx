@@ -1,7 +1,13 @@
 import { FC, useState } from 'react'
+import generateContent from '../utils/generateContent'
 
 const Workspace: FC = () => {
   const [blocks, setBlocks] = useState<string[]>(['Editable Block'])
+
+  const addBlock = async () => {
+    const content = await generateContent()
+    setBlocks([...blocks, content])
+  }
 
   return (
     <div className="p-4 space-y-3">
@@ -19,7 +25,7 @@ const Workspace: FC = () => {
       ))}
       <button
         className="px-3 py-1 text-sm border rounded-md"
-        onClick={() => setBlocks([...blocks, ''])}
+        onClick={addBlock}
       >
         + Add Block
       </button>
